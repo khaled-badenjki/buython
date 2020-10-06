@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # local
+    'catalog.apps.CatalogConfig',
+    'catalog_graphql.apps.CatalogGraphqlConfig'
 ]
 
 MIDDLEWARE = [
