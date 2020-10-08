@@ -18,6 +18,18 @@ class Category(MPTTModel):
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
+    class MPTTMeta:
+        order_insertion_by = ['name']
+
+    def __str__(self):
+        full_path = [self.name]
+        k = self.parent
+        while k is not None:
+            full_path.append(k.name)
+            k = k.parent
+        return ' / '.join(full_path[::-1])
+
+
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
