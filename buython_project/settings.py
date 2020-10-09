@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'modeltranslation',
     'ckeditor',
     'ckeditor_uploader',
+    'graphene_django',
 
     # django stuff
     'django.contrib.admin',
@@ -176,3 +177,8 @@ CKEDITOR_CONFIGS = {
 }
 
 ###################################
+
+
+GRAPHENE = {
+    'SCHEMA': 'app.schema.schema' # Where your Graphene schema lives
+}
