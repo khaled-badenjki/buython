@@ -180,5 +180,5 @@ CKEDITOR_CONFIGS = {
 
 
 GRAPHENE = {
-    'SCHEMA': 'app.schema.schema' # Where your Graphene schema lives
+    'SCHEMA': 'buython_project.schema.schema' # Where your Graphene schema lives
 }
