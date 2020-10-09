@@ -30,7 +30,6 @@ class Category(MPTTModel):
         return ' / '.join(full_path[::-1])
 
 
-
 class Product(models.Model):
     name = models.CharField(max_length=255)
     category = models.ManyToManyField(Category, related_name='products')
