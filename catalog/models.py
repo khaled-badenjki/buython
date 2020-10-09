@@ -1,5 +1,7 @@
 from django.db import models
 from mptt.models import MPTTModel, TreeForeignKey
+from ckeditor_uploader.fields import RichTextUploadingField
+
 
 STATUS = (
     ('True', 'True'),
@@ -35,6 +37,7 @@ class Product(models.Model):
     category = models.ManyToManyField(Category, related_name='products')
     keywords = models.CharField(max_length=255)
     description = models.CharField(max_length=500)
+    long_description = RichTextUploadingField(default=None, blank=True, null=True)
     image = models.ImageField(blank=True, upload_to='images/')
     status = models.CharField(max_length=10, choices=STATUS)
     price = models.DecimalField(max_digits=6, decimal_places=2)
